@@ -1,0 +1,90 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Halaman Utama - Portal Pekerjaan</title>
+    </head>
+    <body>
+        <header>
+            <h1>Portal Pekerjaan</h1>
+        </header>  
+        
+        <main>
+
+            <h2>Cari Lowongan Pekerjaan</h2>
+            <form action="halaman_detail.html" method="get">
+            <table>
+                <tr>
+                    <td>
+                        <label>Nama Perusahaan:</label>
+                    </td>
+                    
+                    <td>
+                        <input type="text" placeholder="Nama Perusahaan">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Kategori Pekerjaan:</label>
+                    </td>
+                    <td>
+                        <select name="Kategori" id="KategoriID" > 
+                            <option value="0" placeholder="Pilih Kategori">Kategori Pekerjaan</option>
+                            <option value="IT">IT</option>
+                            <option value="Keuangan">Keuangan</option>
+                            <option value="Pendidikan">Pendidikan</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Lokasi Pekerjaan:</label>
+                    </td>
+                    <td>
+                        <select name="Lokasi" id="Lokasi ID" > 
+                            <option value="0" placeholder="Pilih Lokasi">Lokasi Pekerjaan</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Jenis Pekerjaan:</label>
+                    </td>
+                    <td>
+                        <select>
+                            <option value="">Jenis Pekerjaan</option>
+                            <option value="full-time">Full-time</option>
+                            <option value="part-time">Part-time</option>
+                            <option value="remote">Remote</option>
+                            <option value="freelance">Freelance</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Rentang Gaji:</label>
+                    </td>
+                    <td>
+                        <select>
+                            <option value="">Rentang Gaji</option>
+                            <option value="1-5">Rp 1.000.000 - Rp 5.000.000</option>
+                            <option value="5-10">Rp 5.000.000 - Rp 10.000.000</option>
+                            <option value="10-15">Rp 10.000.000 - Rp 15.000.000</option>
+                            <option value="15-20">Rp 15.000.000 - Rp 20.000.000</option>
+                            <option value="20+">Di atas Rp 20.000.000</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <button type="submit">Cari</button>
+                    </td>
+                </tr>
+            </table>
+            </form>
+
+        </main>
+        
+    </body>
+    </html>
