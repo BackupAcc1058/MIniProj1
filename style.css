@@ -177,3 +177,39 @@ footer {
     position: relative;
     bottom: 40px;
 }
+
+.img-title {
+    float: left;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+
+.img-logo {
+    width: 80px;
+    height: 80px;
+}
+
+.img-text {
+    width: 170px;
+    height: 70px;
+}
+
+.filter-application {
+    margin: 20px;
+    padding: 20px;
+    background-color: #ff99cc;
+    border-radius: 10px;
+    position: absolute;
+    right: 20px;
+    bottom: -10px;
+    text-decoration: none;
+}
+
+.filter-application:hover {
+    background-color: #ff4d4d;
+}
+
+.head-title {
+    clear: both;
+}
