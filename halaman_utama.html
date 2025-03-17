@@ -7,86 +7,57 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>Job Portal</h1>
+    <header class="head">
+        <h1 class="header-title"> Job Portal </h1>
+        <nav>
+            <a class="filter" href="">Company</a>
+            <a class="filter" href="">Category</a>
+            <a class="filter" href="">Location</a>
+            <a class="filter" href="">Type</a>
+            <a class="filter" href="">Salary</a>
+        </nav>
+        <div class="search-bar">
+            <form action="index.html" method="post">
+                <input class="searchtext" type="search" name="src" id="SR" placeholder="Search">
+                <input class="searchbutton" type="submit" name="src-sub" id="SR-sub">
+            </form>
+        </div>
     </header>  
     
-    <main>
+    <main class="form-panel">
 
-        <h2>Search Job Vacancies</h2>
-        <form action="halaman_detail.html" method="get">
-        <table>
-            <tr>
-                <td>
-                    <label>Company Name:</label>
-                </td>
-                
-                <td>
-                    <input type="text" placeholder="Company Name">
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <label>Job Category:</label>
-                </td>
-                <td>
-                    <select name="Category" id="CategoryID"> 
-                        <option value="0" placeholder="Select Category">Job Category</option>
-                        <option value="IT">IT</option>
-                        <option value="Finance">Finance</option>
-                        <option value="Education">Education</option>
-
-                    </select>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <label>Job Location:</label>
-                </td>
-                <td>
-                    <select name="Location" id="LocationID"> 
-                        <option value="0" placeholder="Select Location">Job Location</option>
-                    </select>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <label>Job Type:</label>
-                </td>
-                <td>
-                    <select>
-                        <option value="">Job Type</option>
-                        <option value="full-time">Full-time</option>
-                        <option value="part-time">Part-time</option>
-                        <option value="remote">Remote</option>
-                        <option value="freelance">Freelance</option>
-                    </select>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <label>Salary Range:</label>
-                </td>
-                <td>
-                    <select>
-                        <option value="">Salary Range</option>
-                        <option value="1-5">Rp 1,000,000 - Rp 5,000,000</option>
-                        <option value="5-10">Rp 5,000,000 - Rp 10,000,000</option>
-                        <option value="10-15">Rp 10,000,000 - Rp 15,000,000</option>
-                        <option value="15-20">Rp 15,000,000 - Rp 20,000,000</option>
-                        <option value="20+">Above Rp 20,000,000</option>
-                    </select>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <button type="submit">Search</button>
-                </td>
-            </tr>
-        </table>
-        </form>
+        <h2>Job Vacancies</h2>
+        <div class="job-job">
+            <img class="job-img" src="images/pinkKitsuNoBack.png" alt="KitsuneSoft">
+            <img class="job-title" src="images/KitsuSoft.png" alt="">
+            <a class="detail" href="halaman_detail.html">Learn More</a>
+            <p> >>> Searching for an enthusiastic Developer...</p>
+        </div>
+        <div class="job-job">
+            <img class="job-img" src="" alt="Loading...">
+            <img class="job-title" src="" alt="Loading...">
+            <a class="detail" href="halaman_detail.html">Learn More</a>'
+            <p> >>> Loading...</p>
+        </div>
+        <div class="job-job">
+            <img class="job-img" src="" alt="Loading...">
+            <img class="job-title" src="" alt="Loading...">
+            <a class="detail" href="halaman_detail.html">Learn More</a>'
+            <p> >>> Loading...</p>
+        </div>
+        <div class="job-job">
+            <img class="job-img" src="" alt="Loading...">
+            <img class="job-title" src="" alt="Loading...">
+            <a class="detail" href="halaman_detail.html">Learn More</a>'
+            <p> >>> Loading...</p>
+        </div>
 
     </main>
     
+    <footer>
+        <div>
+            <p>ProgWeb Project In Progress...</p>
+        </div>
+    </footer>
 </body>
 </html>
