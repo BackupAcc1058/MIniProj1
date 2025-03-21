@@ -1,110 +1,243 @@
-@import url('https://fonts.googleapis.com/css2?family=RocknRoll+One&family=Rubik+Moonrocks&family=Rampart+One&display=swap');
-
 body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background: linear-gradient(to bottom, #ff1a1a, #ff66b2);
-    color: white;
     font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom, #ff4d4d, #ff99cc);
     margin: 0;
     padding: 0;
+    color: #333;
 }
 
-header {
-    width: 100%;
-    background: rgba(0, 0, 0, 0.6);
+.head {
+    background-color: #ff1a1a;
     padding: 20px;
     text-align: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
     position: sticky;
     top: 0;
-    z-index: 1000;
-    transition: background 0.3s ease-in-out;
+    z-index: 10;
 }
 
 h1 {
-    font-family: 'RocknRoll Moonrocks', sans-serif;
-    font-size: 36px;
+    color: white;
     margin: 0;
 }
 
-nav a {
-    color: white;
-    text-decoration: none;
-    font-size: 18px;
-    margin: 10px;
-}
-
-main {
+.form-panel {
     padding: 20px;
-    width: 80%;
-    background: rgba(255, 255, 255, 0.2);
-    border-radius: 10px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
-    margin-top: 20px;
-    text-align: left;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    max-width: 800px;
+    margin: auto;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 h2 {
-    font-family: 'RocknRoll One', sans-serif;
-    font-size: 32px;
-    text-transform: uppercase;
+    color: #ff1a1a;
     text-align: center;
-    margin-bottom: 20px;
 }
 
-.company-info {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    margin-bottom: 20px;
+table {
+    width: 100%;
+    margin-top: 20px;
 }
 
-.company-name {
-    font-family: 'RocknRoll One', sans-serif;
-    font-size: 72px;
+td {
+    padding: 10px;
+}
+
+label {
     font-weight: bold;
-    letter-spacing: 3px;
-    color: white;
-    text-transform: uppercase;
-    text-shadow: 4px 4px 0px #1a3d5d;
-    margin-bottom: 10px;
+    color: #ff1a1a;
 }
 
-.company-logo {
-    width: 150px;
-    margin: 10px 0;
+input[type="text"], select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ff4d4d;
+    border-radius: 4px;
+    transition: border-color 0.3s;
+}
+
+input[type="text"]:focus, select:focus {
+    border-color: #ff99cc;
+    outline: none;
+}
+
+input[type="email"], input[type="date"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ff4d4d;
+    border-radius: 4px;
+    transition: border-color 0.3s;
+}
+
+input[type="email"]:focus, input[type="date"]:focus {
+    border-color: #ff99cc;
+    outline: none;
+}
+
+button {
+    background-color: #ff1a1a;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #ff4d4d;
+}
+
+option {
+    padding: 10px;
+}
+
+img {
+    height: 80px;
+}
+
+.header-title {
+    text-align: left;
+}
+
+.filter {
+    margin: 20px;
+    padding: 20px;
+    background-color: #ff99cc;
+    border-radius: 10px;
+    position: relative;
+    bottom: 15px;
+    text-decoration: none;
+}
+
+.filter:hover {
+    background-color: #ff4d4d;
+}
+
+.job-job {
+    text-decoration: none;
+    margin: 20px;
+    padding: 20px;
+    border: 2px solid red;
+    border-radius: 10px;
+}
+
+.job-img {
+    width: 20%;
+    height: 20%;
+    padding: 5px;
+    border: 2px solid red;
+    border-radius: 20px;
 }
 
 .job-title {
-    font-family: 'RocknRoll One', sans-serif;
-    font-size: 36px;
-    font-weight: bold;
-    color: white;
-    text-transform: uppercase;
-    text-shadow: 3px 3px 0px #1a3d5d;
-    margin-bottom: 20px;
+    width: 45%;
+    height: 20%;
+    padding: 20px;
+    border: 2px solid red;
+    border-radius: 20px;
 }
 
-.apply-button {
-    display: inline-block;
-    background: white;
-    color: #ff1a1a;
-    font-size: 20px;
-    font-weight: bold;
-    text-transform: uppercase;
-    padding: 12px 24px;
-    border-radius: 5px;
+.detail {
+    float: right;
+    position: relative;
+    margin: 20px;
+    padding: 20px;
+    top: 30px;
+    background-color: #ff99cc;
+    border-radius: 10px;
     text-decoration: none;
-    margin-top: 20px;
-    transition: 0.3s;
 }
 
-.apply-button:hover {
-    background: #ff66b2;
+.detail:hover {
+    background-color: #ff4d4d;
+}
+
+footer {
+    background-color: #ff1a1a;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.searchtext {
+    height: 30px;
+    width: 200px;
+}
+
+.searchbutton {
+    height: 30px;
+}
+
+.search-bar {
+    width: 20%;
+    float: right;
+    position: relative;
+    bottom: 40px;
+}
+
+.img-title {
+    float: left;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+
+.img-logo {
+    width: 80px;
+    height: 80px;
+}
+
+.img-text {
+    width: 170px;
+    height: 70px;
+}
+
+.filter-application {
+    margin: 20px;
+    padding: 20px;
+    background-color: #ff99cc;
+    border-radius: 10px;
+    position: absolute;
+    right: 20px;
+    bottom: -10px;
+    text-decoration: none;
+}
+
+.filter-application:hover {
+    background-color: #ff4d4d;
+}
+
+.head-title {
+    clear: both;
+}
+
+footer {
+    background-color: #ff1a1a;
+    padding: 20px;
+    text-align: center;
     color: white;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
+    margin-top: 20px;
+}
+
+.footer-content p {
+    margin: 5px 0;
+}
+
+footer nav {
+    margin-top: 10px;
+}
+
+footer nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+    transition: color 0.3s;
+}
+
+footer nav a:hover {
+    color: #ff99cc;
 }
