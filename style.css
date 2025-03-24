@@ -213,3 +213,31 @@ footer {
 .head-title {
     clear: both;
 }
+
+footer {
+    background-color: #ff1a1a;
+    padding: 20px;
+    text-align: center;
+    color: white;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
+    margin-top: 20px;
+}
+
+.footer-content p {
+    margin: 5px 0;
+}
+
+footer nav {
+    margin-top: 10px;
+}
+
+footer nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+    transition: color 0.3s;
+}
+
+footer nav a:hover {
+    color: #ff99cc;
+}
