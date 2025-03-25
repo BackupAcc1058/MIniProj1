@@ -241,3 +241,20 @@ footer nav a {
 footer nav a:hover {
     color: #ff99cc;
 }
+
+.app-form {
+    text-align: center;
+}
+
+.field-form {
+    padding-right: 20px;
+    border-color: #ff1a1a;
+    border-radius: 20px;
+}
+
+.home-img {
+    width: 18px;
+    height: 18px;
+}
+
+
