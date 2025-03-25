@@ -1,13 +1,13 @@
 body {
     font-family: Arial, sans-serif;
-    background: linear-gradient(to bottom, #ff4d4d, #ff99cc);
+    background: linear-gradient(to bottom, #007bff, #66b3ff);
     margin: 0;
     padding: 0;
     color: #333;
 }
 
 .head {
-    background-color: #ff1a1a;
+    background: linear-gradient(to right, #0056b3, #3399ff);
     padding: 20px;
     text-align: center;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
@@ -31,7 +31,7 @@ h1 {
 }
 
 h2 {
-    color: #ff1a1a;
+    color: #0056b3;
     text-align: center;
 }
 
@@ -46,48 +46,48 @@ td {
 
 label {
     font-weight: bold;
-    color: #ff1a1a;
+    color: #0056b3;
 }
 
 input[type="text"], select {
     width: 100%;
     padding: 10px;
-    border: 1px solid #ff4d4d;
+    border: 1px solid #007bff;
     border-radius: 4px;
     transition: border-color 0.3s;
 }
 
 input[type="text"]:focus, select:focus {
-    border-color: #ff99cc;
+    border-color: #66b3ff;
     outline: none;
 }
 
 input[type="email"], input[type="date"] {
     width: 100%;
     padding: 10px;
-    border: 1px solid #ff4d4d;
+    border: 1px solid #007bff;
     border-radius: 4px;
     transition: border-color 0.3s;
 }
 
 input[type="email"]:focus, input[type="date"]:focus {
-    border-color: #ff99cc;
+    border-color: #66b3ff;
     outline: none;
 }
 
 button {
-    background-color: #ff1a1a;
+    background: linear-gradient(to right, #0056b3, #3399ff);
     color: white;
     padding: 10px 15px;
     border: none;
     border-radius: 4px;
     cursor: pointer;
     font-size: 16px;
-    transition: background-color 0.3s;
+    transition: background 0.3s;
 }
 
 button:hover {
-    background-color: #ff4d4d;
+    background: linear-gradient(to right, #003d80, #007bff);
 }
 
 option {
@@ -105,22 +105,23 @@ img {
 .filter {
     margin: 20px;
     padding: 20px;
-    background-color: #ff99cc;
+    background: linear-gradient(to right, #66b3ff, #3399ff);
     border-radius: 10px;
     position: relative;
     bottom: 15px;
     text-decoration: none;
+    color: white;
 }
 
 .filter:hover {
-    background-color: #ff4d4d;
+    background: linear-gradient(to right, #3399ff, #0056b3);
 }
 
 .job-job {
     text-decoration: none;
     margin: 20px;
     padding: 20px;
-    border: 2px solid red;
+    border: 2px solid #0056b3;
     border-radius: 10px;
 }
 
@@ -128,7 +129,7 @@ img {
     width: 20%;
     height: 20%;
     padding: 5px;
-    border: 2px solid red;
+    border: 2px solid #0056b3;
     border-radius: 20px;
 }
 
@@ -136,7 +137,7 @@ img {
     width: 45%;
     height: 20%;
     padding: 20px;
-    border: 2px solid red;
+    border: 2px solid #0056b3;
     border-radius: 20px;
 }
 
@@ -146,20 +147,22 @@ img {
     margin: 20px;
     padding: 20px;
     top: 30px;
-    background-color: #ff99cc;
+    background: linear-gradient(to right, #66b3ff, #3399ff);
     border-radius: 10px;
     text-decoration: none;
+    color: white;
 }
 
 .detail:hover {
-    background-color: #ff4d4d;
+    background: linear-gradient(to right, #3399ff, #0056b3);
 }
 
 footer {
-    background-color: #ff1a1a;
+    background: linear-gradient(to right, #0056b3, #3399ff);
     padding: 20px;
     text-align: center;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    color: white;
 }
 
 .searchtext {
@@ -198,33 +201,21 @@ footer {
 .filter-application {
     margin: 20px;
     padding: 20px;
-    background-color: #ff99cc;
+    background: linear-gradient(to right, #66b3ff, #3399ff);
     border-radius: 10px;
     position: absolute;
     right: 20px;
     bottom: -10px;
     text-decoration: none;
+    color: white;
 }
 
 .filter-application:hover {
-    background-color: #ff4d4d;
+    background: linear-gradient(to right, #3399ff, #0056b3);
 }
 
 .head-title {
     clear: both;
-}
-
-footer {
-    background-color: #ff1a1a;
-    padding: 20px;
-    text-align: center;
-    color: white;
-    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
-    margin-top: 20px;
-}
-
-.footer-content p {
-    margin: 5px 0;
 }
 
 footer nav {
@@ -239,7 +230,7 @@ footer nav a {
 }
 
 footer nav a:hover {
-    color: #ff99cc;
+    color: #66b3ff;
 }
 
 .app-form {
@@ -248,7 +239,7 @@ footer nav a:hover {
 
 .field-form {
     padding-right: 20px;
-    border-color: #ff1a1a;
+    border-color: #0056b3;
     border-radius: 20px;
 }
 
@@ -258,15 +249,12 @@ footer nav a:hover {
 }
 
 .logout-button {
-    display: inline-block;
-    padding: 10px 15px;
-    background-color: white;
-    color: black;
+    margin: 10px;
+    padding: 10px;
+    background-color:white;
+    border-radius: 10px;
+    position: relative;
+    bottom: 15px;
     text-decoration: none;
-    border-radius: 5px;
-    font-size: 14px;
-}
-
-.logout-button:hover {
-    background-color: #c82333;
+    color: black;
 }
