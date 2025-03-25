@@ -10,12 +10,23 @@
 
 </head>
 <body>
-    <header>
-        <h1>Job Portal</h1>
+    <header class="head">
+        <h1 class="header-title"> Job Detail </h1>
         <nav>
-            <a href="halaman_utama.html">Home</a>
+            <a class="filter" href="halaman_utama.html"> <img class="home-img" src="images/home.png" alt="Home"> Home</a>
+            <a class="filter" href="">Company</a>
+            <a class="filter" href="">Category</a>
+            <a class="filter" href="">Location</a>
+            <a class="filter" href="">Type</a>
+            <a class="filter" href="">Salary</a>
         </nav>
-    </header>
+        <div class="search-bar">
+            <form action="index.html" method="post">
+                <input class="searchtext" type="search" name="src" id="SR" placeholder="Search">
+                <input class="searchbutton" type="submit" name="src-sub" id="SR-sub">
+            </form>
+        </div>
+    </header>  
     <main>
         <h2>Job Detail</h2>
         <div class="job-detail">

@@ -167,3 +167,33 @@ footer {
     font-weight: bold;
     text-transform: uppercase;
 }
+
+.filter {
+    margin: 20px;
+    padding: 20px;
+    background-color: darkblue;
+    border-radius: 10px;
+    position: relative;
+    bottom: 15px;
+    text-decoration: none;
+}
+
+.filter:hover {
+    background-color: blue;
+}
+
+.search-bar {
+    width: 20%;
+    float: right;
+    position: relative;
+    bottom: 40px;
+}
+
+.header-title {
+    text-align: left;
+    margin-left: 20px;
+}
+
+.home-img {
+    width: 18px;
+}
