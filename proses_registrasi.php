@@ -43,8 +43,24 @@ if ($role === 'pencari_kerja') {
     }
 
 } elseif ($role === 'perusahaan') {
-    echo "Perusahaan (skip dulu)";
+    $nama    = $_POST['nama_perusahaan'];
+    $lokasi  = $_POST['lokasi'];
+    $logo    = '';
+
+    // Upload logo jika ada
+    if (isset($_FILES['logo']) && $_FILES['logo']['error'] === UPLOAD_ERR_OK) {
+        $ext  = pathinfo($_FILES['logo']['name'], PATHINFO_EXTENSION);
+        $logo = 'uploads/logo_' . time() . '.' . $ext;
+        move_uploaded_file($_FILES['logo']['tmp_name'], $logo);
+    }
+
+    $stmt2 = $conn->prepare("INSERT INTO perusahaan (id_user, nama_perusahaan, logo, lokasi) VALUES (?, ?, ?, ?)");
+    $stmt2->bind_param("isss", $user_id, $nama, $logo, $lokasi);
+    if (!$stmt2->execute()) {
+        die("Gagal simpan perusahaan: " . $stmt2->error);
+    }
 }
 
-echo "SUKSES!";
+// Redirect ke halaman login
+header("Location: login.php");
 exit;
