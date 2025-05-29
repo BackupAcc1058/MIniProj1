@@ -1,3 +1,13 @@
+<?php
+session_start();
+
+// Jika sudah login, redirect ke dashboard sesuai role
+if (isset($_SESSION['user_id'])) {
+    header('Location: halaman_pencari_kerja.php');
+    exit;
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,6 +28,9 @@
 
             <label for="username">Username:</label>
             <input type="text" id="username" name="username" required>
+
+            <label for="email">email:</label>
+            <input type="text" id="email" name="email" required>
 
             <label for="password">Password:</label>
             <input type="password" id="password" name="password" required>
