@@ -12,7 +12,7 @@ if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'pencari_kerja') {
 $sql = "SELECT l.id, l.nama_pekerjaan, l.kategori, l.rentang_gaji, p.nama_perusahaan
         FROM lowongan l
         JOIN perusahaan p ON l.id_perusahaan = p.id
-        ORDER BY l.created_at DESC";
+        ORDER BY l.id DESC";
 
 $result = mysqli_query($conn, $sql);
 $lowongan = [];
@@ -28,12 +28,15 @@ if ($result && mysqli_num_rows($result) > 0) {
 <head>
     <meta charset="UTF-8">
     <title>Dashboard Pencari Kerja</title>
-    <link rel="stylesheet" href="style_3.css">
+    <link rel="stylesheet" href="style_2.css">
 </head>
 <body>
+    <?php
+        include "include/header.php";
+    ?>
     <div class="dashboard-container">
         <h2>Selamat Datang, Pencari Kerja!</h2>
-        <p><a href="logout.php">Logout</a></p>
+        <!-- <p><a href="logout.php">Logout</a></p> -->
 
         <h3>Lowongan Tersedia:</h3>
 
@@ -41,18 +44,34 @@ if ($result && mysqli_num_rows($result) > 0) {
             <p>Belum ada lowongan tersedia.</p>
         <?php else: ?>
             <ul>
+                <main class="form-panel">
                 <?php foreach ($lowongan as $l): ?>
-                    <li>
-                        <strong><?= htmlspecialchars($l['nama_pekerjaan']) ?></strong><br>
+                    <!-- <div class="job-job">
+                        <img class="job-img" src="images/gameloftjpg.jpg" alt="Gameloft">
+                        <img class="job-title" src="images/Gameloft-logo-and-wordmark.png" alt="">
+                        <a class="detail" href="halaman_detail.html">Learn More</a>
+                        <p> >>> Recruiting Lead Art Position...</p>
+                    </div> -->
+                        <div class="job-job">
+                            <strong><?= htmlspecialchars($l['nama_pekerjaan']) ?></strong><br>
+                            Perusahaan: <?= htmlspecialchars($l['nama_perusahaan']) ?><br>
+                            Kategori: <?= htmlspecialchars($l['kategori']) ?><br>
+                            Gaji: <?= htmlspecialchars($l['rentang_gaji']) ?><br>
+                            <a class="detail" href="detail_lowongan.php?id=<?= $l['id'] ?>">Lihat Detail / Lamar</a>
+                        </div>
+                        <!-- <strong><?= htmlspecialchars($l['nama_pekerjaan']) ?></strong><br>
                         Perusahaan: <?= htmlspecialchars($l['nama_perusahaan']) ?><br>
                         Kategori: <?= htmlspecialchars($l['kategori']) ?><br>
                         Gaji: <?= htmlspecialchars($l['rentang_gaji']) ?><br>
-                        <a href="detail_lowongan.php?id=<?= $l['id'] ?>">Lihat Detail / Lamar</a>
+                        <a href="detail_lowongan.php?id=<?= $l['id'] ?>">Lihat Detail / Lamar</a> -->
                     </li>
                     <hr>
                 <?php endforeach; ?>
             </ul>
         <?php endif; ?>
     </div>
+    <?php
+        include "include/footer.php";
+    ?>
 </body>
 </html>

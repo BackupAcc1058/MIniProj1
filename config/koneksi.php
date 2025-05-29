@@ -3,7 +3,7 @@
 $host = 'localhost';
 $user = 'root';
 $pass = ''; 
-$db   = 'portal_lowongan';
+$db   = 'miniproj';
 
 // Buat koneksi
 $conn = mysqli_connect($host, $user, $pass, $db);

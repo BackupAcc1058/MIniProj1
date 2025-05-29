@@ -1,3 +1,10 @@
+<?php
+    if (isset($_SESSION['user_id'])) {
+    header('Location: halaman_pencari_kerja.php');
+    exit;
+}
+?>
+
 <!DOCTYPE html>
 <html lang="id">
 <head>

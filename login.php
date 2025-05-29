@@ -19,11 +19,11 @@ if (isset($_SESSION['user_id'])) {
 <body>
     <div class="login-container">
         <h2>Login</h2>
-        <form action="halaman_utama.html" method="GET">
+        <form action="proses_login.php" method="POST">
             <label for="user-type">Login Sebagai:</label>
             <select id="user-type" name="user-type" required>
-                <option value="job-seeker">Pencari Kerja</option>
-                <option value="company">Perusahaan</option>
+                <option value="pencari_kerja">Pencari Kerja</option>
+                <option value="perusahaan">Perusahaan</option>
             </select>
 
             <label for="username">Username:</label>
