@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="css/footer.css">
 <?php
 echo    "<footer>";
 echo        "<div class='footer-content'>";

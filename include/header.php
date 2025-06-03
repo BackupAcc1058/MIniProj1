@@ -1,13 +1,14 @@
+<link rel="stylesheet" href="css/header.css">
 <?php
 echo    "<header class='head'>";
 echo        "<h1 class='header-title'> Application Page </h1>";
 echo        "<nav>";
 echo            "<a class='filter' href=''> <img class='home-img' src='images/home.png' alt='Home'> Home</a>";
-echo            "<a class='filter' href=''>Company</a>";
-echo            "<a class='filter' href=''>Category</a>";
-echo            "<a class='filter' href=''>Location</a>";
-echo            "<a class='filter' href=''>Type</a>";
-echo            "<a class='filter' href=''>Salary</a>";
+// echo            "<a class='filter' href=''>Company</a>";
+// echo            "<a class='filter' href=''>Category</a>";
+// echo            "<a class='filter' href=''>Location</a>";
+// echo            "<a class='filter' href=''>Type</a>";
+// echo            "<a class='filter' href=''>Salary</a>";
 echo            "<a class='filter' href='logout.php'>Logout</a>";
 echo        "</nav>";
 echo        "<div class='search-bar'>";
