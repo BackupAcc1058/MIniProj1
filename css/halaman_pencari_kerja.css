@@ -1,0 +1,159 @@
+/* style_2.css */
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f8fb;
+    color: #333;
+}
+
+a {
+    color: #0066cc;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Header dan Footer */
+header, footer {
+    background-color: #003366;
+    color: white;
+    padding: 15px 30px;
+    text-align: center;
+}
+
+/* Container Utama */
+.dashboard-container {
+    max-width: 900px;
+    margin: 40px auto;
+    background-color: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* Judul */
+.dashboard-container h2 {
+    color: #003366;
+    margin-bottom: 20px;
+}
+
+.dashboard-container h3 {
+    color: #0055aa;
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+/* Daftar Lowongan */
+.form-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.job-job {
+    border: 1px solid #cce0f5;
+    background-color: #f9fbfd;
+    padding: 20px;
+    border-radius: 8px;
+    transition: box-shadow 0.2s ease-in-out;
+}
+
+.job-job:hover {
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+
+.job-job strong {
+    font-size: 1.2em;
+    color: #003366;
+}
+
+.detail {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 16px;
+    background-color: #0077cc;
+    color: white;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.detail:hover {
+    background-color: #005fa3;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .dashboard-container {
+        margin: 20px;
+        padding: 20px;
+    }
+
+    .job-job {
+        padding: 15px;
+    }
+}
+
+
+.header-title {
+    font-size: 20px; 
+    font-weight: bold;
+    margin: 0;
+    padding: 10px 0;
+    color: white;
+}
+
+.head {
+    background-color: #003366;
+    color: white;
+    padding: 20px 30px;
+}
+
+nav {
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+nav .filter {
+    color: white;
+    font-weight: 500;
+    padding: 6px 12px;
+    background-color: #005fa3;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: background-color 0.2s;
+}
+
+nav .filter:hover {
+    background-color: #0077cc;
+}
+
+.search-bar {
+    margin-top: 15px;
+}
+
+.searchtext {
+    padding: 8px;
+    width: 200px;
+    border-radius: 6px 0 0 6px;
+    border: none;
+    outline: none;
+}
+
+.searchbutton {
+    padding: 8px 12px;
+    background-color: #0077cc;
+    color: white;
+    border: none;
+    border-radius: 0 6px 6px 0;
+    cursor: pointer;
+}
+
+.searchbutton:hover {
+    background-color: #005fa3;
+}

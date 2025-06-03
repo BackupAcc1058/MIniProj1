@@ -28,7 +28,7 @@ if ($result && mysqli_num_rows($result) > 0) {
 <head>
     <meta charset="UTF-8">
     <title>Dashboard Pencari Kerja</title>
-    <link rel="stylesheet" href="style_2.css">
+    <link rel="stylesheet" href="halaman_pencari_kerja.css">
 </head>
 <body>
     <?php

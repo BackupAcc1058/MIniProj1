@@ -14,7 +14,7 @@ if (isset($_SESSION['user_id'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login - Job Portal</title>
-    <link rel="stylesheet" href="style_3.css">
+    <link rel="stylesheet" href="css/login.css">
 </head>
 <body>
     <div class="login-container">
@@ -26,8 +26,8 @@ if (isset($_SESSION['user_id'])) {
                 <option value="perusahaan">Perusahaan</option>
             </select>
 
-            <label for="username">Username:</label>
-            <input type="text" id="username" name="username" required>
+            <!-- <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required> -->
 
             <label for="email">email:</label>
             <input type="text" id="email" name="email" required>
