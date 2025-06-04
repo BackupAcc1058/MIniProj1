@@ -3,13 +3,21 @@
 echo    "<header class='head'>";
 echo        "<h1 class='header-title'> Application Page </h1>";
 echo        "<nav>";
-echo            "<a class='filter' href=''> <img class='home-img' src='images/home.png' alt='Home'> Home</a>";
+echo            "<a class='filter' href='halaman_pencari_kerja.php'> <img class='home-img' src='images/home.png' alt='Home'> Home</a>";
 // echo            "<a class='filter' href=''>Company</a>";
 // echo            "<a class='filter' href=''>Category</a>";
 // echo            "<a class='filter' href=''>Location</a>";
 // echo            "<a class='filter' href=''>Type</a>";
 // echo            "<a class='filter' href=''>Salary</a>";
-echo            "<a class='filter' href='logout.php'>Logout</a>";
+                
+                if ($_SESSION) {
+                    if ($_SESSION['role'] == "perusahaan") {
+                    echo "<a class='filter' href='dashboard_perusahaan.php'>Dashboard</a>";
+                    }
+                    echo "<a class='filter' href='logout.php'>Logout</a>";
+                } else {
+                    echo "<a class='filter' href='logout.php'>Login</a>";
+                }
 echo        "</nav>";
 echo        "<div class='search-bar'>";
 echo            "<form action='index.html' method='post'>";

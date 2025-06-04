@@ -3,10 +3,10 @@ session_start();
 require_once 'config/koneksi.php';
 
 // Cek apakah user sudah login dan memiliki role pencari_kerja
-if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'pencari_kerja') {
-    header('Location: login.php');
-    exit;
-}
+// if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'pencari_kerja') {
+//     header('Location: login.php');
+//     exit;
+// }
 
 // Ambil data lowongan (gunakan mysqli)
 $sql = "SELECT l.id, l.nama_pekerjaan, l.kategori, l.rentang_gaji, p.nama_perusahaan

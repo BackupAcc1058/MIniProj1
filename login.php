@@ -18,6 +18,7 @@ if (isset($_SESSION['user_id'])) {
 </head>
 <body>
     <div class="login-container">
+        <a id="btnhome" href="halaman_pencari_kerja.php">Home</a>
         <h2>Login</h2>
         <form action="proses_login.php" method="POST">
             <label for="user-type">Login Sebagai:</label>

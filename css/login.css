@@ -35,4 +35,16 @@ button:hover {
     background-color: #0056b3;
 }
 
+#btnhome {
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    text-decoration: none;
+    padding: 15px;
+    border-radius: 8px;
+    margin: 10 0;
+}
 
+#btnhome:hover {
+    background-color: #0056b3;
+}
