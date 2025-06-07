@@ -10,7 +10,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Registrasi Akun</title>
-    <link rel="stylesheet" href="style_3.css">
+    <link rel="stylesheet" href="css/register.css">
 </head>
 <body>
     <div class="login-container">

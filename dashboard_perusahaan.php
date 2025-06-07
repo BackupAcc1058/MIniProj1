@@ -31,19 +31,22 @@ $result = $stmt->get_result();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="css/style_2.css">
+    <link rel="stylesheet" href="css/dashboard_perusahaan.css">
 </head>
 <body>
     <?php
+        $customPageTitle = "Dashboard Perusahaan";
         include "include/header.php";
     ?>
-    <h2>Dashboard Perusahaan</h2>
+    <!-- <h2>Dashboard Perusahaan</h2> -->
     <a href="tambah_lowongan.php">+ Tambah Lowongan</a>
     <table border="1">
         <tr>
             <th>Nama Pekerjaan</th>
             <th>Kategori</th>
             <th>Jenis</th>
+            <th>Deskripsi</th>
+            <th>Syarat</th>
             <th>Gaji</th>
             <th>Batas Lamaran</th>
             <th>Aksi</th>
@@ -53,6 +56,8 @@ $result = $stmt->get_result();
             <td><?= htmlspecialchars($row['nama_pekerjaan']) ?></td>
             <td><?= htmlspecialchars($row['kategori']) ?></td>
             <td><?= htmlspecialchars($row['jenis_pekerjaan']) ?></td>
+            <td><?= htmlspecialchars($row['deskripsi']) ?></td>
+            <td><?= htmlspecialchars($row['syarat']) ?></td>
             <td><?= htmlspecialchars($row['rentang_gaji']) ?></td>
             <td><?= $row['batas_lamaran'] ?></td>
             <td>

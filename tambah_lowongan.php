@@ -33,9 +33,13 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="style_2.css">
+    <link rel="stylesheet" href="css/tambah_lowongan.css">
 </head>
 <body>
+    <?php
+        // $customPageTitle = "Tambah Lowongan";
+        // include "include/header.php";
+    ?>
     <form method="POST">
         <h2>Tambah Lowongan</h2>
         <input type="text" name="nama_pekerjaan" placeholder="Nama Pekerjaan" required><br>

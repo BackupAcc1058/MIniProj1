@@ -33,10 +33,11 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit Lowongan</title>
-    <link rel="stylesheet" href="style_2.css">
+    <link rel="stylesheet" href="css/edit_lowongan.css">
 </head>
 <body>
     <?php
+        $customPageTitle = "Edit Lowongan";
         include "include/header.php";
     ?>
     <form method="POST">
@@ -50,8 +51,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         <input type="date" name="batas_lamaran" value="<?= $data['batas_lamaran'] ?>" required><br>
         <button type="submit">Update</button>
     </form>
+</body>
     <?php
         include "include/footer.php";
     ?>
-</body>
 </html>
