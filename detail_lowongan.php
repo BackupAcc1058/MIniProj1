@@ -16,6 +16,7 @@
     </head>
     <body>
         <?php
+        $customPageTitle = "Detail Lowongan";
             include "include/header.php";
             // Ambil data lowongan
             $stmt = $conn->prepare("SELECT * FROM lowongan WHERE id_perusahaan = ?");

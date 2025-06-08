@@ -4,7 +4,7 @@
     if ($_GET) {
         $id = $_GET['id'];
     }
-
+    
     if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['Finish'])) {
         $id_user = $_SESSION['user_id']; // make sure session contains user ID
         $id_lowongan = $_GET['id'];      // passed via URL
@@ -66,11 +66,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="css/detail.css">
+    <link rel="stylesheet" href="css/halaman_pengajuan.css">
 </head>
 
 <body>
     <?php
+        $customPageTitle = "Aplication Form";
         include "include/header.php";
     ?>
     <fieldset id="detfield">

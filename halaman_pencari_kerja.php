@@ -31,47 +31,51 @@ if ($result && mysqli_num_rows($result) > 0) {
     <link rel="stylesheet" href="css/halaman_pencari_kerja.css">
 </head>
 <body>
+     <div class="wrapper">
     <?php
         include "include/header.php";
     ?>
-    <div class="dashboard-container">
-        <h2>Selamat Datang, Pencari Kerja!</h2>
-        <!-- <p><a href="logout.php">Logout</a></p> -->
+   
+        <div class="dashboard-container">
+            <h2>Selamat Datang, Pencari Kerja!</h2>
+            <!-- <p><a href="logout.php">Logout</a></p> -->
 
-        <h3>Lowongan Tersedia:</h3>
+            <h3>Lowongan Tersedia:</h3>
 
-        <?php if (empty($lowongan)): ?>
-            <p>Belum ada lowongan tersedia.</p>
-        <?php else: ?>
-            <ul>
-                <main class="form-panel">
-                <?php foreach ($lowongan as $l): ?>
-                    <!-- <div class="job-job">
-                        <img class="job-img" src="images/gameloftjpg.jpg" alt="Gameloft">
-                        <img class="job-title" src="images/Gameloft-logo-and-wordmark.png" alt="">
-                        <a class="detail" href="halaman_detail.html">Learn More</a>
-                        <p> >>> Recruiting Lead Art Position...</p>
-                    </div> -->
-                        <div class="job-job">
-                            <strong><?= htmlspecialchars($l['nama_pekerjaan']) ?></strong><br>
+            <?php if (empty($lowongan)): ?>
+                <p>Belum ada lowongan tersedia.</p>
+            <?php else: ?>
+                <ul>
+                    <main class="form-panel">
+                    <?php foreach ($lowongan as $l): ?>
+                        <!-- <div class="job-job">
+                            <img class="job-img" src="images/gameloftjpg.jpg" alt="Gameloft">
+                            <img class="job-title" src="images/Gameloft-logo-and-wordmark.png" alt="">
+                            <a class="detail" href="halaman_detail.html">Learn More</a>
+                            <p> >>> Recruiting Lead Art Position...</p>
+                        </div> -->
+                            <div class="job-job">
+                                <strong><?= htmlspecialchars($l['nama_pekerjaan']) ?></strong><br>
+                                Perusahaan: <?= htmlspecialchars($l['nama_perusahaan']) ?><br>
+                                Kategori: <?= htmlspecialchars($l['kategori']) ?><br>
+                                Gaji: <?= htmlspecialchars($l['rentang_gaji']) ?><br>
+                                <a class="detail" href="detail_lowongan.php?id=<?= $l['id'] ?>">Lihat Detail / Lamar</a>
+                            </div>
+                            <!-- <strong><?= htmlspecialchars($l['nama_pekerjaan']) ?></strong><br>
                             Perusahaan: <?= htmlspecialchars($l['nama_perusahaan']) ?><br>
                             Kategori: <?= htmlspecialchars($l['kategori']) ?><br>
                             Gaji: <?= htmlspecialchars($l['rentang_gaji']) ?><br>
-                            <a class="detail" href="detail_lowongan.php?id=<?= $l['id'] ?>">Lihat Detail / Lamar</a>
-                        </div>
-                        <!-- <strong><?= htmlspecialchars($l['nama_pekerjaan']) ?></strong><br>
-                        Perusahaan: <?= htmlspecialchars($l['nama_perusahaan']) ?><br>
-                        Kategori: <?= htmlspecialchars($l['kategori']) ?><br>
-                        Gaji: <?= htmlspecialchars($l['rentang_gaji']) ?><br>
-                        <a href="detail_lowongan.php?id=<?= $l['id'] ?>">Lihat Detail / Lamar</a> -->
-                    </li>
-                    <hr>
-                <?php endforeach; ?>
-            </ul>
-        <?php endif; ?>
-    </div>
+                            <a href="detail_lowongan.php?id=<?= $l['id'] ?>">Lihat Detail / Lamar</a> -->
+                        </li>
+                        <hr>
+                    <?php endforeach; ?>
+                </ul>
+            <?php endif; ?>
+        </div>
+    
     <?php
         include "include/footer.php";
     ?>
+    </div>
 </body>
 </html>

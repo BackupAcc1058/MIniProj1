@@ -37,9 +37,10 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 </head>
 <body>
     <?php
-        // $customPageTitle = "Tambah Lowongan";
-        // include "include/header.php";
+        $customPageTitle = "Tambah Lowongan";
+        include "include/header.php";
     ?>
+    <main class="form-container">
     <form method="POST">
         <h2>Tambah Lowongan</h2>
         <input type="text" name="nama_pekerjaan" placeholder="Nama Pekerjaan" required><br>
@@ -51,5 +52,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         <input type="date" name="batas_lamaran" required><br>
         <button type="submit">Simpan</button>
     </form>
+    </main>
 </body>
+    <?php
+        include "include/footer.php";
+    ?>
 </html>

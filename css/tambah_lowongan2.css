@@ -1,0 +1,117 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000; 
+
+}
+
+body {
+    background-color: #f4f7fc;
+    min-height: 100vh;
+    padding: 0;
+    margin: 0;
+    
+}
+
+/* Container form
+main.form-container {
+    background-color: #ffffff;
+    width: 100%;
+    max-width: 500px;
+    padding: 40px 45px;
+    border-radius: 12px;
+    box-shadow: 0 12px 24px rgba(0, 82, 204, 0.15);
+    
+} */
+
+.form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    max-width: 500px;
+    margin: 40px auto; 
+    padding: 0 20px;
+}
+
+
+/* Judul form */
+form h2 {
+    color: #0056b3;
+    font-size: 2rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* Input dan textarea */
+input[type="text"],
+input[type="date"],
+textarea {
+    width: 100%;
+    padding: 14px 16px;
+    margin-bottom: 20px;
+    border: 2px solid #c8d8f6;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    color: #333;
+    background-color: #fafbff;
+    resize: vertical;
+}
+
+textarea {
+    min-height: 120px;
+}
+
+input[type="text"]:focus,
+input[type="date"]:focus,
+textarea:focus {
+    border-color: #0056b3;
+    outline: none;
+    box-shadow: 0 0 8px rgba(0, 86, 179, 0.4);
+}
+
+::placeholder {
+    color: #7a8fbf;
+    font-style: italic;
+}
+
+/* Tombol submit */
+button[type="submit"] {
+    width: 100%;
+    padding: 16px 0;
+    background-color: #0056b3;
+    border: none;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 1.15rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-top: 10px;
+}
+
+button[type="submit"]:hover {
+    background-color: #004095;
+    transform: translateY(-2px);
+}
+
+
+/* Responsif */
+@media (max-width: 500px) {
+    main.form-container {
+        padding: 30px 20px;
+    }
+
+    form h2 {
+        font-size: 1.7rem;
+    }
+}
