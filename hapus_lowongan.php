@@ -13,15 +13,16 @@ $cek->fetch();
 $cek->close();
 
 if ($total > 0) {
-    echo "Lowongan tidak bisa dihapus karena sudah ada pelamar.";
+    echo "<script>alert('Lowongan tidak bisa dihapus karena sudah ada pelamar.');</script>";
+    header("Refresh:0; url=dashboard_perusahaan.php");
+    exit;
+} else {
+    // Hapus jika tidak ada pelamar
+    $stmt = $conn->prepare("DELETE FROM lowongan WHERE id = ?");
+    $stmt->bind_param("i", $id);
+    $stmt->execute();
+    
+    header("Location: dashboard_perusahaan.php");
     exit;
 }
-
-// Hapus jika tidak ada pelamar
-$stmt = $conn->prepare("DELETE FROM lowongan WHERE id = ?");
-$stmt->bind_param("i", $id);
-$stmt->execute();
-
-header("Location: dashboard_perusahaan.php");
-exit;
 ?>

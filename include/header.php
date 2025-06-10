@@ -47,11 +47,11 @@
             }
 
     echo    "</nav>";
-    echo    "<div class='search-bar'>";
-    echo        "<form action='index.html' method='post'>";
-    echo            "<input class='searchtext' type='search' name='src' id='SR' placeholder='Search'>";
-    echo            "<input class='searchbutton' type='submit' name='src-sub' id='SR-sub'>";
-    echo        "</form>";
-    echo    "</div>";
+    // echo    "<div class='search-bar'>";
+    // echo        "<form action='index.html' method='post'>";
+    // echo            "<input class='searchtext' type='search' name='src' id='SR' placeholder='Search'>";
+    // echo            "<input class='searchbutton' type='submit' name='src-sub' id='SR-sub'>";
+    // echo        "</form>";
+    // echo    "</div>";
     echo "</header>";
 ?>

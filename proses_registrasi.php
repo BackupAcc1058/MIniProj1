@@ -50,7 +50,7 @@ if ($role === 'pencari_kerja') {
     // Upload logo jika ada
     if (isset($_FILES['logo']) && $_FILES['logo']['error'] === UPLOAD_ERR_OK) {
         $ext  = pathinfo($_FILES['logo']['name'], PATHINFO_EXTENSION);
-        $logo = 'uploads/logo_' . time() . '.' . $ext;
+        $logo = 'images/logo_' . time() . '.' . $ext;
         move_uploaded_file($_FILES['logo']['tmp_name'], $logo);
     }
 

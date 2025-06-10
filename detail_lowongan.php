@@ -19,7 +19,7 @@
         $customPageTitle = "Detail Lowongan";
             include "include/header.php";
             // Ambil data lowongan
-            $stmt = $conn->prepare("SELECT * FROM lowongan WHERE id = ?");
+            $stmt = $conn->prepare("SELECT * FROM lowongan l JOIN perusahaan p ON l.id_perusahaan = p.id WHERE l.id = ?");
             $stmt->bind_param("i", $id);
             $stmt->execute();
             $result = $stmt->get_result();
@@ -27,6 +27,7 @@
         <fieldset id="detfield">
         <div id="work">
             <?php while ($row = $result->fetch_assoc()): ?>
+                    <img src="<?= htmlspecialchars($row['logo']) ?>" alt="Logo Perusahaan" style="max-width: 200px; height: auto; margin-bottom: 10px;">
                     <h1 class="nam-det"><?= htmlspecialchars($row['nama_pekerjaan']) ?></h1>
                     <h3><?= htmlspecialchars($row['kategori']) ?></h3>
                     <h4><?= htmlspecialchars($row['jenis_pekerjaan']) ?></h4>
