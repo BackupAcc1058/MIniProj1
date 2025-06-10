@@ -2,28 +2,28 @@
 session_start();
 require_once 'config/koneksi.php';
 
-$keyword = isset($_GET['keyword']) ? trim($_GET['keyword']) : '';
-if (!empty($keyword)) {
-    $sql = "SELECT l.id, l.nama_pekerjaan, l.kategori, l.rentang_gaji, l.batas_lamaran, p.nama_perusahaan
+$search = isset($_POST['src']) ? mysqli_real_escape_string($conn, $_POST['src']) : '';
+
+if ($search) {
+    $sql = "SELECT l.id, l.nama_pekerjaan, l.kategori, l.rentang_gaji, l.jenis_pekerjaan, l.deskripsi, l.syarat, l.batas_lamaran, p.nama_perusahaan
             FROM lowongan l
             JOIN perusahaan p ON l.id_perusahaan = p.id
-            WHERE (l.nama_pekerjaan LIKE ? OR l.kategori LIKE ? OR p.nama_perusahaan LIKE ?)
-            AND l.batas_lamaran >= CURDATE()
+            WHERE (l.nama_pekerjaan LIKE '%$search%' 
+                OR l.kategori LIKE '%$search%' 
+                OR l.jenis_pekerjaan LIKE '%$search%' 
+                OR l.deskripsi LIKE '%$search%' 
+                OR l.syarat LIKE '%$search%')
+              AND l.batas_lamaran >= CURDATE()
             ORDER BY l.id DESC";
-            
-            $stmt = $conn->prepare($sql);
-            $searchParam = "%" . $keyword . "%";
-            $stmt->bind_param("sss", $searchParam, $searchParam, $searchParam);
-            $stmt->execute();
-            $result = $stmt->get_result();
 } else {
     $sql = "SELECT l.id, l.nama_pekerjaan, l.kategori, l.rentang_gaji, l.batas_lamaran, p.nama_perusahaan
-            FROM lowongan l
+            FROM lowongan l 
             JOIN perusahaan p ON l.id_perusahaan = p.id
             WHERE l.batas_lamaran >= CURDATE()
             ORDER BY l.id DESC";
-    $result = mysqli_query($conn, $sql);
 }
+
+$result = mysqli_query($conn, $sql);
 $lowongan = [];
 
 if ($result && mysqli_num_rows($result) > 0) {
@@ -31,6 +31,14 @@ if ($result && mysqli_num_rows($result) > 0) {
         $lowongan[] = $row;
     }
 }
+
+// $lowongan = [];
+
+// if ($result && mysqli_num_rows($result) > 0) {
+//     while ($row = mysqli_fetch_assoc($result)) {
+//         $lowongan[] = $row;
+//     }
+// }
 
 // Cek apakah user sudah login dan memiliki role pencari_kerja
 // if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'pencari_kerja') {
@@ -44,21 +52,23 @@ if ($result && mysqli_num_rows($result) > 0) {
 //         JOIN perusahaan p ON l.id_perusahaan = p.id
 //         ORDER BY l.id DESC";
 
-$sql = "SELECT l.id, l.nama_pekerjaan, l.kategori, l.rentang_gaji, l.batas_lamaran, p.nama_perusahaan
-        FROM lowongan l
-        JOIN perusahaan p ON l.id_perusahaan = p.id
-        WHERE l.batas_lamaran >= CURDATE()
-        ORDER BY l.id DESC";
+// $sql = "SELECT l.id, l.nama_pekerjaan, l.kategori, l.rentang_gaji, l.batas_lamaran, p.nama_perusahaan
+//         FROM lowongan l
+//         JOIN perusahaan p ON l.id_perusahaan = p.id
+//         WHERE l.batas_lamaran >= CURDATE()
+//         ORDER BY l.id DESC";
 
 
-$result = mysqli_query($conn, $sql);
-$lowongan = [];
+// $result = mysqli_query($conn, $sql);
 
-if ($result && mysqli_num_rows($result) > 0) {
-    while ($row = mysqli_fetch_assoc($result)) {
-        $lowongan[] = $row;
-    }
-}
+// $lowongan = [];
+
+// if ($result && mysqli_num_rows($result) > 0) {
+//     while ($row = mysqli_fetch_assoc($result)) {
+//         $lowongan[] = $row;
+//     }
+// }
+
 ?>
 <!DOCTYPE html>
 <html lang="id">
@@ -77,11 +87,17 @@ if ($result && mysqli_num_rows($result) > 0) {
             <h2>Selamat Datang, Pencari Kerja!</h2>
             <!-- <p><a href="logout.php">Logout</a></p> -->
 
+            <!-- Form Pencarian -->
+            <form action="" method="post" class="search-bar">
+                <input class="searchtext" type="search" name="src" id="SR" placeholder="Cari lowongan...">
+                <input class="searchbutton" type="submit" name="src-sub" id="SR-sub" value="Cari">
+            </form>
+
             <h3>Lowongan Tersedia:</h3>
-            <form action="halaman_pencari_kerja.php" method="GET" style="margin-bottom: 20px;">
+            <!-- <form action="halaman_pencari_kerja.php" method="GET" style="margin-bottom: 20px;">
                 <input type="text" name="keyword" placeholder="Cari pekerjaan, kategori, atau perusahaan..." value="<?= isset($_GET['keyword']) ? htmlspecialchars($_GET['keyword']) : '' ?>" style="padding: 6px; width: 300px;">
                 <button type="submit" style="padding: 6px;">Cari</button>
-            </form>
+            </form> -->
 
             <?php if (empty($lowongan)): ?>
                 <p>Belum ada lowongan tersedia.</p>

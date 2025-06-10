@@ -13,6 +13,27 @@
         $portofolio = $_FILES['portfile'];
         $surat_lamaran = $_FILES['suratlmr'];
 
+        // Validate file sizes (max 5MB)
+        $maxSize = 5 * 1024 * 1024; // 5MB
+
+        function validateFileSize($file, $label) {
+            global $maxSize;
+            if ($file['error'] === 0 && $file['size'] > $maxSize) {
+                echo "<script>alert('File $label melebihi ukuran maksimal 5MB.'); window.history.back();</script>";
+                exit;
+            }
+        }
+
+        validateFileSize($cv, "CV");
+
+        if (!empty($portofolio['name'])) {
+            validateFileSize($portofolio, "Portofolio");
+        }
+
+        if (!empty($surat_lamaran['name'])) {
+            validateFileSize($surat_lamaran, "Surat Pelamaran");
+        }
+
         // Set target directories
         $uploadDir = "uploads/";
         if (!is_dir($uploadDir)) {
@@ -85,10 +106,42 @@
                 <table>
                     <tr>
                         <td>
+                            <label for="Fullname">Nama Lengkap: </label>
+                        </td>
+                        <td>
+                            <input type="text" name="Fullname" id="FN" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="Birthdate">Tgl Lahir: </label>
+                        </td>
+                        <td>
+                            <input type="date" name="Birthdate" id="DOB" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="Email">Email: </label>
+                        </td>
+                        <td>
+                            <input type="email" name="Email" id="EM" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="PhoneNum">No. HP:  </label>
+                        </td>
+                        <td>
+                            <input type="text" name="PhoneNum" id="PN" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
                             <label for="cvfile">CV: </label>
                         </td>
                         <td>
-                            <input type="file" accept=".pdf" name="cvfile" id="CV" required>
+                            <input type="file" accept=".pdf" name="cvfile" id="CV" required title="Max 5MB PDF">
                         </td>
                     </tr>
                     <tr>
@@ -96,7 +149,7 @@
                             <label for="portfile">Portofolio: </label>
                         </td>
                         <td>
-                            <input type="file" accept=".pdf" name="portfile" id="PF">
+                            <input type="file" accept=".pdf" name="portfile" id="PF" title="Max 5MB PDF">
                         </td>
                     </tr>
                     <tr>
@@ -104,7 +157,7 @@
                             <label for="suratlmr">Surat Pelamaran : </label>
                         </td>
                         <td>
-                            <input type="file" name="suratlmr" id="LT">
+                            <input type="file" name="suratlmr" id="LT" title="Max 5MB PDF">
                         </td>
                     </tr>
                     <tr>
@@ -121,5 +174,6 @@
     <?php
         include "include/footer.php";
     ?>
+    <script src="js/validate-upload.js"></script>
 </body>
 </html>
