@@ -38,6 +38,7 @@ $result = $stmt->get_result();
 </head>
 <body>
     <?php
+        $customPageTitle = "Daftar Pelamar";
         include "include/header.php";
     ?>
     <h2>Daftar Pelamar</h2>
