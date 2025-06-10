@@ -1,6 +1,13 @@
 <?php
     session_start();
     require "config/koneksi.php";
+
+    // Cek apakah user sudah login dan memiliki role pencari_kerja
+    if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'pencari_kerja') {
+        header('Location: login.php');
+        exit;
+    }
+
     if ($_GET) {
         $id = $_GET['id'];
     }
@@ -125,7 +132,7 @@
                             <label for="Email">Email: </label>
                         </td>
                         <td>
-                            <input type="email" name="Email" id="EM" required>
+                            <input type="email" name="Email" id="EM" required value="<?php echo isset($_SESSION['email']) ? $_SESSION['email'] : ''; ?>">
                         </td>
                     </tr>
                     <tr>

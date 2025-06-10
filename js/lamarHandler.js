@@ -17,3 +17,16 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 });
+
+document.addEventListener('DOMContentLoaded', function () {
+    const btnLamar = document.getElementById('btnlamar');
+
+    if (btnLamar) {
+        btnLamar.addEventListener('click', (e) => {
+            if (typeof sudahMelamar !== 'undefined' && sudahMelamar) {
+                e.preventDefault();
+                alert('Anda sudah pernah melamar di lowongan ini.');
+            }
+        });
+    }
+});

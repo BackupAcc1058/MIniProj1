@@ -53,5 +53,17 @@
             include "include/footer.php";
         ?>
         <script src="js/lamarHandler.js"></script>
+        <?php
+            $id_user = $_SESSION['user_id'] ?? null;
+            $stmtCek = $conn->prepare("SELECT COUNT(*) as total FROM lamaran WHERE id_user = ? AND id_lowongan = ?");
+            $stmtCek->bind_param("ii", $id_user, $id);
+            $stmtCek->execute();
+            $cekResult = $stmtCek->get_result();
+            $cekRow = $cekResult->fetch_assoc();
+            $sudahMelamar = $cekRow['total'] > 0 ? 'true' : 'false';
+        ?>
+        <script>
+            const sudahMelamar = <?= $sudahMelamar ?>;
+        </script>
     </body>
 </html>
