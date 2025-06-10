@@ -75,7 +75,7 @@ if ($result && mysqli_num_rows($result) > 0) {
 <head>
     <meta charset="UTF-8">
     <title>Dashboard Pencari Kerja</title>
-    <link rel="stylesheet" href="css/halaman_pencari_kerja.css">
+    <link rel="stylesheet" href="css/halaman_pencari_kerja.css?<?php echo time();?>">
 </head>
 <body>
      <div class="wrapper">

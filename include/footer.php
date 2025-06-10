@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="css/footer2.css">
+<link rel="stylesheet" href="css/footer2.css?<?php echo time();?>">
 <?php
 echo    "<footer>";
 echo        "<div class='footer-content'>";

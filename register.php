@@ -10,7 +10,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Registrasi Akun</title>
-    <link rel="stylesheet" href="css/register.css">
+    <link rel="stylesheet" href="css/register.css?<?php echo time();?>">
 </head>
 <body>
     <div class="login-container">
