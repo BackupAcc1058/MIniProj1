@@ -35,6 +35,6 @@ if ($result->num_rows === 1) {
         echo "Password salah.";
     }
 } else {
-    echo "Email tidak ditemukan atau role tidak sesuai.";
+    echo "<script>alert('Email tidak ditemukan atau role tidak sesuai.'); window.location.href = 'login.php';</script>";
 }
 ?>
