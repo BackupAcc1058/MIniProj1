@@ -22,14 +22,17 @@ header, footer {
 }
 
 #work, .form-panel {
-    text-align: center;
+    text-align: left;
 }
 
-#detfield {
-    border: #003366;
-    border-width: 10;
-    border-style: solid;
+#detfield {    
     margin: 30px;
+    border: 1px solid #cce0f5;
+    background-color: #f9fbfd;
+    padding: 20px;
+    border-radius: 8px;
+    transition: box-shadow 0.2s ease-in-out;
+    width: 93%;
 }
 
 nav {

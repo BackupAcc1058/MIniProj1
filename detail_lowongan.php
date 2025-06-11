@@ -11,7 +11,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
+        <title>Detail Lowongan</title>
         <link rel="stylesheet" href="css/detail.css?<?php echo time();?>">
     </head>
     <body>
@@ -29,10 +29,12 @@
             <?php while ($row = $result->fetch_assoc()): ?>
                     <img src="<?= htmlspecialchars($row['logo']) ?>" alt="Logo Perusahaan" style="max-width: 200px; height: auto; margin-bottom: 10px;">
                     <h1 class="nam-det"><?= htmlspecialchars($row['nama_pekerjaan']) ?></h1>
-                    <h3><?= htmlspecialchars($row['kategori']) ?></h3>
+                    <h3>Kategori: <?= htmlspecialchars($row['kategori']) ?></h3>
                     <h4><?= htmlspecialchars($row['jenis_pekerjaan']) ?></h4>
                     <h5>Deskripsi: </h5>
                     <p><?= htmlspecialchars($row['deskripsi'])?></p>
+                    <h5>Syarat: </h5>
+                    <p><?= htmlspecialchars($row['syarat'])?></p>
                     <p>Rentang Gaji: <?= htmlspecialchars($row['rentang_gaji']) ?></p>
                     <p>Batas Lamaran: <?= $row['batas_lamaran'] ?></p>
             <?php endwhile; ?>

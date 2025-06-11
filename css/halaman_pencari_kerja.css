@@ -36,7 +36,8 @@ header, footer {
 /* Container Utama */
 .dashboard-container {
     flex: 1; 
-    max-width: 900px;
+    /* max-width: 900px; */
+    width: 70%;
     margin: 40px auto;
     background-color: white;
     padding: 30px;
@@ -70,6 +71,8 @@ header, footer {
     padding: 20px;
     border-radius: 8px;
     transition: box-shadow 0.2s ease-in-out;
+    width: 70%;
+
 }
 
 .job-job:hover {

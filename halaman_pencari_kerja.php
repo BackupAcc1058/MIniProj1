@@ -72,17 +72,19 @@ if ($result && mysqli_num_rows($result) > 0) {
 ?>
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
     <meta charset="UTF-8">
     <title>Dashboard Pencari Kerja</title>
-    <link rel="stylesheet" href="css/halaman_pencari_kerja.css?<?php echo time();?>">
+    <link rel="stylesheet" href="css/halaman_pencari_kerja.css?<?php echo time(); ?>">
 </head>
+
 <body>
-     <div class="wrapper">
-    <?php
+    <div class="wrapper">
+        <?php
         include "include/header.php";
-    ?>
-   
+        ?>
+
         <div class="dashboard-container">
             <h2>Selamat Datang, Pencari Kerja!</h2>
             <!-- <p><a href="logout.php">Logout</a></p> -->
@@ -104,36 +106,40 @@ if ($result && mysqli_num_rows($result) > 0) {
             <?php else: ?>
                 <ul>
                     <main class="form-panel">
-                    <?php foreach ($lowongan as $l): ?>
-                        <!-- <div class="job-job">
-                            <img class="job-img" src="images/gameloftjpg.jpg" alt="Gameloft">
-                            <img class="job-title" src="images/Gameloft-logo-and-wordmark.png" alt="">
-                            <a class="detail" href="halaman_detail.html">Learn More</a>
-                            <p> >>> Recruiting Lead Art Position...</p>
-                        </div> -->
-                            <div class="job-job">
-                                <strong><?= htmlspecialchars($l['nama_pekerjaan']) ?></strong><br>
-                                Perusahaan: <?= htmlspecialchars($l['nama_perusahaan']) ?><br>
-                                Kategori: <?= htmlspecialchars($l['kategori']) ?><br>
-                                Gaji: <?= htmlspecialchars($l['rentang_gaji']) ?><br>
-                                Batas Lamaran: <?= htmlspecialchars($l['batas_lamaran']) ?><br>
-                                <a class="detail" href="detail_lowongan.php?id=<?= $l['id'] ?>">Lihat Detail / Lamar</a>
-                            </div>
-                            <!-- <strong><?= htmlspecialchars($l['nama_pekerjaan']) ?></strong><br>
-                            Perusahaan: <?= htmlspecialchars($l['nama_perusahaan']) ?><br>
-                            Kategori: <?= htmlspecialchars($l['kategori']) ?><br>
-                            Gaji: <?= htmlspecialchars($l['rentang_gaji']) ?><br>
-                            <a href="detail_lowongan.php?id=<?= $l['id'] ?>">Lihat Detail / Lamar</a> -->
-                        </li>
-                        <hr>
-                    <?php endforeach; ?>
+                        <table cellpadding="10" cellspacing="0" style="width: 100%; text-align: left;">
+                            <tr>
+                                <?php
+                                $i = 0;
+                                foreach ($lowongan as $l):
+                                    if ($i > 0 && $i % 3 == 0) { // kalo udah ada 3 konten, buat baris baru
+                                        echo "</tr><tr>";
+                                    }
+                                ?>
+                                    <td>
+                                        <div class="job-job">
+                                            <strong><?= htmlspecialchars($l['nama_pekerjaan']) ?></strong><br>
+                                            Perusahaan: <?= htmlspecialchars($l['nama_perusahaan']) ?><br>
+                                            Kategori: <?= htmlspecialchars($l['kategori']) ?><br>
+                                            Gaji: <?= htmlspecialchars($l['rentang_gaji']) ?><br>
+                                            Batas Lamaran: <?= htmlspecialchars($l['batas_lamaran']) ?><br>
+                                            <a class="detail" href="detail_lowongan.php?id=<?= $l['id'] ?>">Lihat Detail / Lamar</a>
+                                        </div>
+                                    </td>
+                                <?php
+                                    $i++;
+                                endforeach;
+                                ?>
+                            </tr>
+                        </table>
+                    </main>
                 </ul>
             <?php endif; ?>
         </div>
-    
-    <?php
+
+        <?php
         include "include/footer.php";
-    ?>
+        ?>
     </div>
 </body>
+
 </html>
