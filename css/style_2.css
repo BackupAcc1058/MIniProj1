@@ -9,17 +9,14 @@ body {
     padding: 0;
 }
 
-header {
-    width: 100%;
-    background: #0D47A1;
-    padding: 20px;
-    text-align: center;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
+header, footer {
+    background-color: #003366;
     color: white;
+    padding: 15px 30px;
+    text-align: center;
+    font-size: 16px;
+    line-height: 1.5;
 }
-
 h1 {
     font-size: 36px;
     margin: 0;

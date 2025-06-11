@@ -1,0 +1,57 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f8fb;
+    color: #333;
+}
+
+a {
+    color: #0066cc;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+header, footer {
+    background-color: #003366;
+    color: white;
+    padding: 15px 30px;
+    text-align: center;
+}
+
+#work, .form-panel {
+    text-align: left;
+}
+
+#detfield {    
+    margin: 30px;
+    border: 1px solid #cce0f5;
+    background-color: #f9fbfd;
+    padding: 20px;
+    border-radius: 8px;
+    transition: box-shadow 0.2s ease-in-out;
+    width: 93%;
+}
+
+nav {
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+nav .filter, #btnlamar, #elselamar, #loginlamar {
+    color: white;
+    font-weight: 500;
+    padding: 6px 12px;
+    background-color: #005fa3;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: background-color 0.2s;
+}
+
+nav .filter:hover, #btnlamar, #elselamar, #loginlamar {
+    background-color: #0077cc;
+}
